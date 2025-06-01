@@ -1,7 +1,7 @@
 import express from "express";
 import  cors from "cors";
 import  morgan  from "morgan";
-import { mongoose } from "./src/DB.js";
+import mongoose from "./DB.js";
 
 const app = express();
 
