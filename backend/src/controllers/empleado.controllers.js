@@ -71,7 +71,7 @@ empleadosController.eliminarEmpleado = async (req, res) => {
         const { id } = req.params;
         const empleadoEliminado = await empleado.findByIdAndDelete(id);
         if (!empleadoEliminado) {
-            return res.status(404).json({ message: "Empleado no encontrado" });
+            return res.status(404).json({ message: "Empleado no se encontra" });
         }
     } catch (error) {
         console.error("Error eliminando empleado:", error);
