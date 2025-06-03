@@ -15,5 +15,5 @@ empleadosController.getEmpleados = async (req, res) => {
 empleadosController.createEmpleado = async (req, res) => {
     const empleados = new empleado(req.body);
     await empleados.save()
-    res.sratsus(201).send("se ha creado un empleado");
+    res.status(201).send("se ha creado un empleado");
 }
