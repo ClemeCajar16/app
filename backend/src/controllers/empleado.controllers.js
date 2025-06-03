@@ -36,3 +36,31 @@ empleadosController.createEmpleado = async (req, res) => {
 
     }
 }
+
+empleadosController.updateEmpleado = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const empleadoEdit = {
+      nombre: req.body.nombre,
+      apellido: req.body.apellido,
+      email: req.body.email,
+      telefono: req.body.telefono,
+      direccion: req.body.direccion
+    };
+
+    const updatedEmpleado = await empleado.findByIdAndUpdate(
+      id,
+      { $set: empleadoEdit },
+      { new: true }
+    );
+
+    if (!updatedEmpleado) {
+      return res.status(404).json({ message: "Empleado no encontrado" });
+    }
+
+    res.status(200).json({ message: "Empleado actualizado correctamente" });
+  } catch (error) {
+    console.error("Error updating empleado:", error);
+    res.status(500).json({ message: "Error updating empleado" });
+  }
+};
