@@ -45,7 +45,8 @@ empleadosController.updateEmpleado = async (req, res) => {
       apellido: req.body.apellido,
       email: req.body.email,
       telefono: req.body.telefono,
-      direccion: req.body.direccion
+      direccion: req.body.direccion,
+        salario: req.body.salario
     };
 
     const updatedEmpleado = await empleado.findByIdAndUpdate(
