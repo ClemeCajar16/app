@@ -12,6 +12,16 @@ empleadosController.getEmpleados = async (req, res) => {
   }
 }
 
+empleadosController.getEmpleadoId = async (req, res) => {
+    try {
+        
+    const empleadoId = await empleado.findById(req.params.id);
+        res.status(200).json(empleadoId);
+    } catch (error) {
+        res.status(500).json({ message: "no se encontro el ID" });
+    }
+}
+
 empleadosController.createEmpleado = async (req, res) => {
     try {
         
