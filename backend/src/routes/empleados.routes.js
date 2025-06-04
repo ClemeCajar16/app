@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const {schema} = mongoose;
+const {Schema} = mongoose;
 
-export const empleadoSchema = new schema({
+export const empleadoSchema = new Schema({
     nombre: {
         type: String,
         required: true
@@ -31,3 +31,4 @@ export const empleadoSchema = new schema({
     }
 })
 
+export const Empleado = mongoose.model("Empleado", empleadoSchema);
