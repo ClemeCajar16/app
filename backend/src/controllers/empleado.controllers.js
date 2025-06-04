@@ -42,11 +42,11 @@ empleadosController.updateEmpleado = async (req, res) => {
     const { id } = req.params;
     const empleadoEdit = {
       nombre: req.body.nombre,
-      apellido: req.body.apellido,
+      oficio: req.body.oficio,
       email: req.body.email,
       telefono: req.body.telefono,
       direccion: req.body.direccion,
-        salario: req.body.salario
+      salario: req.body.salario
     };
 
     const updatedEmpleado = await empleado.findByIdAndUpdate(
@@ -80,3 +80,5 @@ empleadosController.eliminarEmpleado = async (req, res) => {
     }
 
 }
+
+export default empleadosController;

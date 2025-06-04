@@ -1,34 +1,12 @@
-import mongoose from "mongoose";
+import express from "express";
+import empleadosController from "../controllers/empleado.controllers.js";
 
-const {Schema} = mongoose;
+const router = express.Router();
 
-export const empleadoSchema = new Schema({
-    nombre: {
-        type: String,
-        required: true
-    },
-    oficio: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    telefono: {
-        type: String,
-        required: true
-    },
+router.get("/", empleadosController.getEmpleados);
+router.get("/:id", empleadosController.getEmpleadoId);
+router.post("/", empleadosController.createEmpleado);
+router.put("/:id", empleadosController.updateEmpleado);
+router.delete("/:id", empleadosController.deleteEmpleado);
 
-    direccion: {
-        type: String,
-        required: true
-    },
-    salario: {
-        type: Number,
-        required: true
-    }
-})
-
-export const Empleado = mongoose.model("Empleado", empleadoSchema);
+export default router;
