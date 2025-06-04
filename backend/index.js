@@ -6,14 +6,7 @@ const app = express();
 
 app.use(express.json())
 app.use(morgan("dev"));
-app.use(cors({origin: "http://localhost:4000": true}));
-
-
-// app.get("/", (req, res) => {
-
-//     res.send("Hello World!");
-// });
-
+app.use(cors({origin: "http://localhost:4000"}));
 
 
 const PORT = process.env.PORT || 3000;
