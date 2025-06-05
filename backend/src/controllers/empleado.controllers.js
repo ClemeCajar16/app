@@ -64,3 +64,5 @@ empleadoController.deleteEmpleado = async (req, res) => {
         res.status(500).json({ message: "Error al eliminar empleado", error });
     }
 };
+
+export default empleadoController;
