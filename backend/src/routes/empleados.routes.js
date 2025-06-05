@@ -7,6 +7,6 @@ router.get("/", empleadosController.getEmpleados);
 router.get("/:id", empleadosController.getEmpleadoId);
 router.post("/", empleadosController.createEmpleado);
 router.put("/:id", empleadosController.updateEmpleado);
-router.delete("/:id", empleadosController.deleteEmpleado);
+router.delete("/:id", empleadosController.eliminarEmpleado);
 
 export default router;

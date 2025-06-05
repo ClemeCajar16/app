@@ -1,25 +1,17 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-// mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// })
-// .then(() => {
-//   console.log("✅ Base de datos conectada exitosamente");
-// })
-// .catch((error) => {
-//   console.error("❌ Error al conectar con la base de datos:", error);
-// });
 
-// export default mongoose;
 
-const URI = "mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest";
+const URI = process.env.MONGODB_URI;
 
-mongoose.connect(URI) 
+mongoose.connect(URI)
   .then(() => {
-    console.log("✅ Base de datos conectada exitosamente 🥳");})
-    .catch((error) => {
+    console.log("✅ Base de datos conectada exitosamente 🥳");
+  })
+  .catch((error) => {
     console.error("❌ Error al conectar con la base de datos 😯: ", error);
   });
-  
-  export default mongoose;
+
+export default mongoose;

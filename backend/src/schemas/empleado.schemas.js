@@ -30,5 +30,4 @@ export const empleadoSchema = new Schema({
         required: true
     }
 })
-
-export const Empleado = mongoose.model("Empleado", empleadoSchema);
+export const empleado = mongoose.model("Empleado", empleadoSchema);
