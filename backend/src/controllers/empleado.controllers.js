@@ -1,4 +1,4 @@
-import empleadoSchema from "../schemas/empleado.schemas.js";
+import Empleado from "../schemas/empleado.schemas.js";
 const empleadoController = {};
 
 // Obtener todos los empleados
