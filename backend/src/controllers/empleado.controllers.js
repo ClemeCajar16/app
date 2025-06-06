@@ -31,7 +31,7 @@ empleadoController.createEmpleado = async (req, res) => {
         const empleadoGuardado = await nuevoEmpleado.save();
         res.status(201).json(empleadoGuardado);
     } catch (error) {
-        res.status(400).json({ message: "Error al crear empleado", error });
+        res.status(400).json({ message: "Error al crear empleado"});
     }
 };
 
