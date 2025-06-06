@@ -5,8 +5,10 @@ import mongoose from "./DB.js";
 import routes from "./src/routes/empleados.routes.js";
 import { config } from "dotenv";
 
-const app = express();
 config();
+const app = express();
+
+
 
 app.set("port", process.env.PORT || 3000);
 
